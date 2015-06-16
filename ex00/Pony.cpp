@@ -6,7 +6,7 @@
 /*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/11 14:55:47 by roblabla          #+#    #+#             */
-/*   Updated: 2015/06/11 15:06:12 by roblabla         ###   ########.fr       */
+/*   Updated: 2015/06/16 10:16:45 by roblabla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 Pony::Pony(std::string name) : name(name)
 {
+}
+
+Pony::~Pony()
+{
+	std::cout	<< "A pony just died. Weep a bit : http://goo.gl/wUknjP"
+				<< std::endl;
 }
 
 void Pony::talk() {
