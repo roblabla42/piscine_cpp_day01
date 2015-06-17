@@ -6,7 +6,7 @@
 /*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/14 14:08:33 by roblabla          #+#    #+#             */
-/*   Updated: 2015/06/14 14:08:35 by roblabla         ###   ########.fr       */
+/*   Updated: 2015/06/17 09:11:21 by roblabla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ static int		parsingReplace(char* file, std::string newFile,
 	}
 	while (std::getline(ifs, line))
 	{
-		while ((len = line.find(strFind)) != std::string::npos)
+		len = 0;
+		while ((len = line.find(strFind, len)) != std::string::npos)
+		{
 			line.replace(len, strFind.size(), strReplace);
+			len += strFind.size();
+		}
 		ofs << line << std::endl;
 	}
 	return (0);
@@ -51,8 +55,7 @@ int				main(int ac, char **av)
 	fileReplace = av[1];
 	strFind = av[2];
 	strReplace = av[3];
-	if (fileReplace.compare("") == 0 || strFind.compare("") == 0 ||
-			strReplace.compare("") == 0)
+	if (fileReplace == "" || strFind == "")
 		return (std::cout << "Error : Arguement empty" << std::endl, 1);
 	fileReplace = fileReplace + ".replace";
 	return (parsingReplace(av[1], fileReplace, strFind, strReplace));
