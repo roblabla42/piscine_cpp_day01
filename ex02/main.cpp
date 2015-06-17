@@ -6,7 +6,7 @@
 /*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/11 16:54:27 by roblabla          #+#    #+#             */
-/*   Updated: 2015/06/11 19:40:10 by roblabla         ###   ########.fr       */
+/*   Updated: 2015/06/17 08:35:34 by roblabla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		main()
 	z = ev.newZombie("Hello WOrld !");
 	z->announce();
 	delete z;
-	while (std::cin >> tmp)
+	while (std::getline(std::cin, tmp))
 		randomChump();
 	return (0);
 }
