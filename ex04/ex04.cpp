@@ -6,7 +6,7 @@
 /*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/12 10:50:07 by roblabla          #+#    #+#             */
-/*   Updated: 2015/06/12 10:51:01 by roblabla         ###   ########.fr       */
+/*   Updated: 2015/06/17 08:38:09 by roblabla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int		main()
 	std::string	*ptr = &str;
 	std::string	&ref = str;
 
-	std::cout << str << std::endl << *ptr << std::endl << ref << std::endl;
+	std::cout << *ptr << std::endl << ref << std::endl;
 	return (0);
 }
